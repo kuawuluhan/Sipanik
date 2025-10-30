@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencarian Data Nikah - Kementerian Agama</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="kemenag-header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="https://cms2023.kemenag.go.id/storage/files/shares/Logo/Kementerian_Agama_new_logo%20(2).png" alt="Logo Kementerian Agama" class="logo">
+                <div class="logo-text">
+                    <h2>Kantor Urusan Agama</h2>
+                    <p1>Kecamatan Wuluhan</p1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="search-board">
+            <h1><i class="fas fa-search"></i> SIPANIK (Sistem Pencarian Akta Nikah)</h1>
+            <p>Silahkan masukan data yang ingin dicari meliputi : Hari, Tanggal, Nama Suami/Istri, Ayah, Ibu, Desa
+.</p>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Ketik di sini...">
+                <button id="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div id="loadingSpinner" class="spinner" style="display: none;"></div>
+            
+            <div id="resultsContainer" class="results-grid">
+                </div>
+        </div>
+    </main>
+
+    <footer class="kemenag-footer">
+        <p>&copy; 2025 Kementerian Agama Republik Indonesia. Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

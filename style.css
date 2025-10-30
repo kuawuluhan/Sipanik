@@ -1,0 +1,232 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7f6; /* Latar belakang abu-abu muda */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Kemenag */
+.kemenag-header {
+    background-color: #ffffff;
+    padding: 20px 0;
+    border-bottom: 3px solid #006400; /* Hijau Kemenag */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.kemenag-header .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.kemenag-header .logo {
+    height: 60px;
+    margin-right: 15px;
+}
+
+.kemenag-header .logo-text h2 {
+    color: #006400;
+    font-weight: 700;
+    font-size: 24px;
+    margin: 0;
+}
+
+.kemenag-header .logo-text p {
+    color: #555;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Konten Utama */
+main {
+    padding: 40px 20px;
+}
+
+.search-board {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-top: 5px solid #006400;
+}
+
+.search-board h1 {
+    color: #006400;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.search-board h1 i {
+    margin-right: 10px;
+}
+
+.search-board p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.search-box {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.search-box #searchInput {
+    flex-grow: 1;
+    padding: 15px 20px;
+    font-size: 18px;
+    border: 2px solid #ddd;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-box #searchInput:focus {
+    border-color: #006400;
+}
+
+.search-box #searchButton {
+    padding: 15px 20px;
+    font-size: 18px;
+    border: none;
+    background-color: #006400;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+    transition: background-color 0.3s;
+}
+
+.search-box #searchButton:hover {
+    background-color: #004d00;
+}
+
+/* Hasil Pencarian */
+#resultsContainer {
+    margin-top: 20px;
+}
+
+.empty-state {
+    text-align: center;
+    color: #888;
+    font-size: 18px;
+    padding: 40px 0;
+}
+
+/* Kartu Data */
+.result-card {
+    background-color: #fdfdfd;
+    border: 1px solid #eee;
+    border-left: 5px solid #FFD700; /* Aksen Emas/Kuning */
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-card h3 {
+    color: #006400;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.result-card .data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 kolom */
+    gap: 15px 30px;
+}
+
+.result-card .data-item {
+    font-size: 16px;
+}
+
+.result-card .data-item strong {
+    display: block;
+    color: #555;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.result-card .data-item span {
+    color: #000;
+    font-weight: 500;
+}
+
+/* Data Akta (Highlight) */
+.result-card .akta-info {
+    grid-column: 1 / -1; /* Lebar penuh */
+    background-color: #e6f0e6;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Spinner (Loading) */
+.spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #006400;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 40px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* Footer Kemenag */
+.kemenag-footer {
+    background-color: #006400;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .kemenag-header .logo-text h2 {
+        font-size: 20px;
+    }
+    .kemenag-header .logo {
+        height: 50px;
+    }
+
+    .result-card .data-grid {
+        grid-template-columns: 1fr; /* 1 kolom di HP */
+        gap: 15px;
+    }
+
+    .result-card .akta-info {
+        grid-column: 1;
+    }
+}
