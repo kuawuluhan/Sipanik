@@ -3,45 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pencarian Data Nikah - Kementerian Agama</title>
+    <title>SIPANIK - Sistem Pencarian Akta Nikah | KUA Wuluhan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
+    <!-- Header -->
     <header class="kemenag-header">
         <div class="container">
             <div class="logo-container">
                 <img src="https://cms2023.kemenag.go.id/storage/files/shares/Logo/Kementerian_Agama_new_logo%20(2).png" alt="Logo Kementerian Agama" class="logo">
                 <div class="logo-text">
                     <h2>Kantor Urusan Agama</h2>
-                    <p1>Kecamatan Wuluhan</p1>
+                    <p>Kecamatan Wuluhan</p>
                 </div>
             </div>
         </div>
     </header>
 
+    <!-- Main Content -->
     <main class="container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <h1>SIPANIK</h1>
+            <p class="subtitle">Sistem Pencarian Akta Nikah</p>
+        </div>
+
+        <!-- Search Board -->
         <div class="search-board">
-            <h1><i class="fas fa-search"></i> SIPANIK (Sistem Pencarian Akta Nikah)</h1>
-            <p>Silahkan masukan data yang ingin dicari meliputi : Hari, Tanggal, Nama Suami/Istri, Ayah, Ibu, Desa
-.</p>
+            <h2>Cari Data Akta Nikah</h2>
+            <p>Masukkan nama suami/istri, nama orang tua, hari, tanggal, atau desa</p>
             
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Ketik di sini...">
-                <button id="searchButton"><i class="fas fa-search"></i></button>
+                <div class="search-input-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Ketik kata kunci pencarian...">
+                </div>
+                <button id="searchButton">
+                    <i class="fas fa-search"></i>
+                    <span>Cari</span>
+                </button>
             </div>
 
             <div id="loadingSpinner" class="spinner" style="display: none;"></div>
             
-            <div id="resultsContainer" class="results-grid">
+            <div id="statsContainer" style="display: none; text-align: center;">
+                <div class="stats-badge">
+                    <i class="fas fa-check-circle"></i>
+                    <span id="statsText">Ditemukan 0 data</span>
                 </div>
+            </div>
+
+            <div id="resultsContainer"></div>
         </div>
     </main>
 
+    <!-- Footer -->
     <footer class="kemenag-footer">
-        <p>&copy; 2025 Kementerian Agama Republik Indonesia. Hak Cipta Dilindungi.</p>
+        <div class="container">
+            <div class="footer-content">
+                <!-- About Section -->
+                <div class="footer-section">
+                    <h3><i class="fas fa-mosque"></i> KUA Wuluhan</h3>
+                    <p>Kantor Urusan Agama Kecamatan Wuluhan</p>
+                    <p>Kabupaten Jember, Jawa Timur</p>
+                    <p>Melayani dengan sepenuh hati untuk keluarga sakinah</p>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="footer-section">
+                    <h3><i class="fas fa-phone"></i> Kontak</h3>
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i> 
+                        <a href="https://maps.app.goo.gl/EDaymQWrV22GCovo6" target="_blank" style="color: rgba(255, 255, 255, 0.9); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFD700'" onmouseout="this.style.color='rgba(255, 255, 255, 0.9)'">
+                            Kec. Wuluhan, Kab. Jember
+                        </a>
+                    </p>
+                    <p>
+                        <i class="fab fa-whatsapp"></i> 
+                        <a href="https://wa.me/6282228186878" target="_blank" style="color: rgba(255, 255, 255, 0.9); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFD700'" onmouseout="this.style.color='rgba(255, 255, 255, 0.9)'">
+                            082228186878
+                        </a>
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope"></i> 
+                        <a href="mailto:kua.wuluhan@gmail.com" style="color: rgba(255, 255, 255, 0.9); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFD700'" onmouseout="this.style.color='rgba(255, 255, 255, 0.9)'">
+                            kua.wuluhan@gmail.com
+                        </a>
+                    </p>
+                </div>
+
+                <!-- Social Media Section -->
+                <div class="footer-section">
+                    <h3><i class="fas fa-share-alt"></i> Sosial Media</h3>
+                    <p>Ikuti kami untuk informasi terbaru</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/6282228186878" target="_blank" class="social-link" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/kua_wuluhan_jember" target="_blank" class="social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/1MNwBddkKc/" target="_blank" class="social-link" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@kua_wuluhan" target="_blank" class="social-link" title="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kementerian Agama Republik Indonesia. Seluruh Hak Cipta Dilindungi Undang-Undang.</p>
+                <small>Sistem Pencarian Akta Nikah - KUA Kecamatan Wuluhan</small>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
