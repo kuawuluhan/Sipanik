@@ -154,7 +154,7 @@ main {
     margin-bottom: 0.75rem;
 }
 
-.search-board p {
+.search-board > p {
     text-align: center;
     color: #6b7280;
     margin-bottom: 2rem;
@@ -215,7 +215,9 @@ main {
     box-shadow: 0 4px 20px rgba(0, 100, 0, 0.3);
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
+    white-space: nowrap;
 }
 
 #searchButton:hover {
@@ -343,11 +345,13 @@ main {
     gap: 0.75rem;
     position: relative;
     z-index: 1;
+    word-wrap: break-word;
 }
 
 .result-card h3 i {
     color: #FFD700;
     font-size: 1.75rem;
+    flex-shrink: 0;
 }
 
 .data-grid {
@@ -437,6 +441,7 @@ main {
     display: block;
     position: relative;
     z-index: 1;
+    word-wrap: break-word;
 }
 
 /* Footer Mewah */
@@ -488,6 +493,7 @@ main {
     display: flex;
     gap: 1rem;
     margin-top: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .social-link {
@@ -533,10 +539,15 @@ main {
     font-size: 0.875rem;
 }
 
-/* Responsive */
+/* Responsive - Mobile First Approach */
 @media (max-width: 768px) {
     .container {
         padding: 0 1rem;
+    }
+
+    /* Header tetap elegan di mobile */
+    .kemenag-header {
+        padding: 1rem 0;
     }
 
     .logo {
@@ -544,45 +555,200 @@ main {
     }
 
     .logo-text h2 {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
     }
 
     .logo-text p {
-        font-size: 0.875rem;
+        font-size: 0.8rem;
+    }
+
+    /* Hero section proporsi baik */
+    .hero-section {
+        padding: 1.5rem 0;
+        margin-bottom: 2rem;
+    }
+
+    .hero-section .hero-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
+    }
+
+    .hero-section .hero-icon i {
+        font-size: 2.25rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section .subtitle {
+        font-size: 1.1rem;
+    }
+
+    /* Search board tetap mewah */
+    main {
+        padding: 2rem 1rem;
+    }
+
+    .search-board {
+        padding: 2rem 1.5rem;
+        border-radius: 24px;
+    }
+
+    .search-board h2 {
+        font-size: 1.5rem;
+    }
+
+    .search-board > p {
+        font-size: 0.95rem;
+    }
+
+    /* Search box vertikal tapi tetap bagus */
+    .search-box {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    #searchInput {
+        padding: 1.1rem 1.1rem 1.1rem 3.25rem;
+        font-size: 1rem;
+        border-radius: 18px;
+    }
+
+    .search-input-wrapper i {
+        left: 1.1rem;
+        font-size: 1.1rem;
+    }
+
+    #searchButton {
+        padding: 1.1rem 2rem;
+        font-size: 1rem;
+        border-radius: 18px;
+        width: 100%;
+    }
+
+    /* Stats badge responsif */
+    .stats-badge {
+        padding: 0.9rem 1.75rem;
+        font-size: 1rem;
+    }
+
+    /* Result cards tetap premium */
+    .result-card {
+        padding: 2rem 1.75rem;
+        border-radius: 20px;
+        margin-bottom: 1.75rem;
+    }
+
+    .result-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1.75rem;
+        flex-wrap: wrap;
+    }
+
+    .result-card h3 i {
+        font-size: 1.5rem;
+    }
+
+    /* Data grid 1 kolom tapi tetap elegan */
+    .data-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .data-item {
+        padding: 1.1rem;
+        border-radius: 14px;
+    }
+
+    .data-item strong {
+        font-size: 0.8rem;
+    }
+
+    .data-item span {
+        font-size: 1rem;
+    }
+
+    /* Akta info tetap menonjol */
+    .akta-info {
+        padding: 1.75rem;
+        border-radius: 18px;
+    }
+
+    .akta-info span {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    /* Empty state proporsional */
+    .empty-state {
+        padding: 3rem 1.5rem;
+    }
+
+    .empty-state i {
+        font-size: 3rem;
+    }
+
+    /* Footer tetap rapi */
+    .kemenag-footer {
+        padding: 2.5rem 0 1.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .footer-section h3 {
+        font-size: 1.15rem;
+    }
+
+    .footer-section p {
+        font-size: 0.95rem;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-bottom p {
+        font-size: 0.9rem;
+    }
+
+    .footer-bottom small {
+        font-size: 0.8rem;
+    }
+}
+
+/* Untuk layar sangat kecil (< 380px) */
+@media (max-width: 380px) {
+    .logo {
+        height: 50px;
+    }
+
+    .logo-text h2 {
+        font-size: 1rem;
+    }
+
+    .logo-text p {
+        font-size: 0.75rem;
     }
 
     .hero-section h1 {
         font-size: 1.75rem;
     }
 
-    .hero-section .subtitle {
-        font-size: 1rem;
-    }
-
     .search-board {
-        padding: 2rem 1.5rem;
-        border-radius: 20px;
-    }
-
-    .search-box {
-        flex-direction: column;
-    }
-
-    #searchButton {
-        justify-content: center;
-    }
-
-    .data-grid {
-        grid-template-columns: 1fr;
+        padding: 1.5rem 1.25rem;
     }
 
     .result-card {
-        padding: 1.5rem;
+        padding: 1.5rem 1.25rem;
     }
 
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    .akta-info span {
+        font-size: 1.25rem;
     }
 }
 
